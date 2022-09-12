@@ -10,10 +10,14 @@ class Rational {
 
     Rational() {
         // to be completed
+//        numerator = 0;
+//        denominator = 1;
     }
 
     Rational(long numerator, long denominator) throws Illegal { 
         // to be completed
+//        this.numerator = numerator;
+//        this.denominator = denominator;
     } 
 
     // find the reduce form 
@@ -46,6 +50,7 @@ class Rational {
      */
     public void subtract(Rational x) {
         // to be completed
+
     }
 
     /***
