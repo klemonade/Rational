@@ -10,14 +10,14 @@ class Rational {
 
     Rational() {
         // to be completed
-//        numerator = 0;
-//        denominator = 1;
+        numerator = 0;
+        denominator = 1;
     }
 
     Rational(long numerator, long denominator) throws Illegal { 
         // to be completed
-//        this.numerator = numerator;
-//        this.denominator = denominator;
+        this.numerator = numerator;
+        this.denominator = denominator;
     } 
 
     // find the reduce form 
@@ -50,7 +50,9 @@ class Rational {
      */
     public void subtract(Rational x) {
         // to be completed
-
+        numerator = (numerator * x.denominator) - (x.numerator * denominator);
+        denominator = (denominator * x.denominator);
+        simplestForm();
     }
 
     /***
@@ -59,6 +61,9 @@ class Rational {
      */
     public void multiply(Rational x) { 
         // to be completed
+        numerator = (numerator * x.numerator);
+        denominator = (denominator * x.denominator);
+        simplestForm();
     }
 
     /***
@@ -67,6 +72,9 @@ class Rational {
      */
     public void divide(Rational x) {
         // to be completed
+        numerator = (numerator * x.denominator);
+        denominator = (denominator * x.numerator);
+        simplestForm();
     }
 
     /***
@@ -75,8 +83,9 @@ class Rational {
      * @return true if the given rational number equals to the current, false otherwise
      */
     public boolean equals(Object x) {
-        // to be completed
-        return true; // TODO: This needs to be modified.
+        // to be complete
+        Rational r = (Rational) x;
+        return this.numerator == r.numerator && this.denominator == r.denominator; // TODO: This needs to be modified.
     }
 
     /***
@@ -87,7 +96,15 @@ class Rational {
      */
     public long compareTo(Object x) {
         // to be completed
-        return -1; // TODO: this needs to be modified.
+        Rational r = (Rational) x;
+        long totalX = this.numerator * r.denominator;
+        long totalR = this.denominator * r.numerator;
+        if (totalX > totalR){
+            return 1;
+        } else if (totalX < totalR){
+            return  -1;
+        }
+        return 0; // TODO: this needs to be modified.
     }
 
     /***
@@ -96,7 +113,7 @@ class Rational {
      */
     public String toString() { 
         // to be completed
-        return ""; // TODO: This needs to be modified.
+        return this.numerator + "/" + this.denominator; // TODO: This needs to be modified.
     }
 
     public static void main(String[] args) {
